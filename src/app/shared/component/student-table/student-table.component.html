@@ -1,0 +1,52 @@
+<h2 class="alert alert-info">student table using viewChild</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" #fname id="fname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" #lname id="lname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" #contact id="contact" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="text" #email id="email" class="form-control">
+            </div>
+            <button class="btn btn-outline-info btn-sm btn-block" (click)="onStdAdd()">Add Student</button>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered" *ngIf="stdArr.length > 0; else noStd">
+                <thead>
+                    <tr>
+                        <th>sr.no</th>
+                        <th>fname</th>
+                        <th>lname</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of stdArr; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{std.fname}}</td>
+                        <td>{{std.lname}}</td>
+                        <td>{{std.contact}}</td>
+                        <td>{{std.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #noStd>
+                <p class="alert alert-info">
+                    No student info is available yet
+                </p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+

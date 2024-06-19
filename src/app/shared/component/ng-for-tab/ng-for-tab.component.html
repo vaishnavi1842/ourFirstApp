@@ -1,0 +1,19 @@
+<h3 class="bg-dark text-white p-2 text-center">tab ts using ngFor</h3>
+<hr>
+<ul class="nav nav-pills  mb-4">
+    <li class="nav-items" *ngFor="let skill of skillsArr" 
+    (click)="onTabClick(skill.skillName)"
+    >
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{
+            active : selectedFrmaework.toLowerCase().includes(skill.skillName.toLowerCase())
+        }">{{skill.skillName}}</a>
+    </li>
+</ul>
+<hr>
+<div class="tab-body mb-4">
+    <div class="card" *ngFor="let skill of skillsArr">
+        <div class="card-body" *ngIf="selectedFrmaework.toLowerCase().includes(skill.skillName.toLowerCase())" [innerHtml]="skill.content">
+        </div>
+    </div>
+</div>

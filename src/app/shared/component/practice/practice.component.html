@@ -1,0 +1,349 @@
+<!-- <h3 class="alert alert-success">student table using viewChild</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                   <div class="form-group">
+                      <label for="fname">First Name</label>
+                      <input type="text" #fname class="form-control">
+                   </div>
+                   <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" #lname class="form-control">
+                 </div>
+                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" #email class="form-control">
+                 </div>
+                 <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="text" #contact class="form-control">
+                 </div>
+                 <button class="btn btn-sm btn-block btn-primary" (click)="onStdAdd()">Add Student</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th>sr no.</th>
+                     <th>fname</th>
+                     <th>lname</th>
+                     <th>email</th>
+                     <th>contact</th>
+                  </tr>
+               </thead>
+                <tbody>
+                    <tr *ngFor="let std of stdArr; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{std.fname}}</td>
+                        <td>{{std.lname}}</td>
+                        <td>{{std.email}}</td>
+                        <td>{{std.contact}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+ <hr> -->
+<!-- <h3 class="alert alert-success text-center">student table element ref with event-binding</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                     <input type="text" #fname class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                     <input type="text" #lname class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                     <input type="text" #email class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                     <input type="text" #contact class="form-control">
+                </div>
+                <button class="btn btn-sm btn-block btn-primary" (click)="onStdAdd(fname,lname,email,con)">Add Student</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>sr.no</th>
+                        <th>fname</th>
+                        <th>lname</th>
+                        <th>email</th>
+                        <th>contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of stdArr; index as i">
+                        <th>{{i+1}}</th>
+                        <th>{{std.fname}}</th>
+                        <th>{{std.lname}}</th>
+                        <th>{{std.email}}</th>
+                        <th>{{std.contact}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>  -->
+
+<!-- <h3 class="alert alert-success text-center">student table element ref with event-binding</h3> -->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                     <input type="text" [(ngModel)]="fname" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                     <input type="text" [(ngModel)]="lname"  class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                     <input type="text" [(ngModel)]="email"  class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                     <input type="text" [(ngModel)]="contact"  class="form-control">
+                </div>
+                <button class="btn btn-sm btn-block btn-primary" (click)="onStdAdd()">Add Student</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>sr.no</th>
+                        <th>fname</th>
+                        <th>lname</th>
+                        <th>email</th>
+                        <th>contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of stdArr; index as i">
+                        <th>{{i+1}}</th>
+                        <th>{{std.fname}}</th>
+                        <th>{{std.lname}}</th>
+                        <th>{{std.email}}</th>
+                        <th>{{std.contact}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>  -->
+<!-- 
+<div class="nav nav-pills mb-4">
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        (click)="selectedFramework='angular'"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes('angular')
+        }">Angular</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        (click)="selectedFramework='react'"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes('react')
+        }">React</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        (click)="selectedFramework='node'"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes('node')
+        }">Node</a>
+    </li>
+</div>
+<div class="tab-body">
+    <div class="card" *ngIf="selectedFramework.toLowerCase().includes('angular')">
+        <div class="card-body">
+            <strong>Angular</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nulla maiores hic dolorum incidunt reprehenderit quis, accusamus, explicabo in, cum quo velit ex! Nam totam hic fuga, cum iure magni?
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedFramework.toLowerCase().includes('react')">
+        <div class="card-body">
+            <strong>React</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nulla maiores hic dolorum incidunt reprehenderit quis, accusamus, explicabo in, cum quo velit ex! Nam totam hic fuga, cum iure magni?
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedFramework.toLowerCase().includes('node')">
+        <div class="card-body">
+            <strong>Node</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nulla maiores hic dolorum incidunt reprehenderit quis, accusamus, explicabo in, cum quo velit ex! Nam totam hic fuga, cum iure magni?
+        </div>
+    </div>
+</div> -->
+<!-- 
+<div class="nav nav-pills">
+    <li class="nav-item" *ngFor="let skill of skillsArr" (click)="selectedFramework=skill.skillName">
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes(skill.skillName.toLowerCase())
+        }">{{skill.skillName}}</a>
+    </li>
+</div>
+<div class="tab-body">
+    <div class="card" *ngFor="let skill of skillsArr">
+        <div class="card-body" 
+        *ngIf="selectedFramework.toLowerCase().includes(skill.skillName.toLowerCase())"
+        [innerHTML]="skill.content">
+            
+        </div>
+    </div>
+</div> -->
+<!-- 
+<div class="nav nav-pills mb-4">
+    <li class="nav-item" >
+        <a href="javascript:;" class="nav-link"
+        (click)="onClick('Html Content')"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes('Html Content'.toLowerCase())
+        }">Html content</a>
+    </li>
+    <li class="nav-item" >
+        <a href="javascript:;" class="nav-link"
+        (click)="onClick('Css Content')"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes('Css Content'.toLowerCase())
+        }">Css content</a>
+    </li>
+    <li class="nav-item" >
+        <a href="javascript:;" class="nav-link"
+        (click)="onClick('Js Content')"
+        [ngClass]="{
+            active:selectedFramework.toLowerCase().includes('Js Content'.toLowerCase())
+        }">Js content</a>
+    </li>
+</div>
+<div class="tab-body" [ngSwitch]="selectedFramework">
+    <div class="card">
+        <div class="card-body" *ngSwitchCase="'Html Content'">
+            <strong>Html Content</strong> 
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates a, voluptatum in doloremque voluptate non quo, voluptas quam dolor quibusdam corrupti libero animi neque! Eaque illo ratione fugit rerum odio.                 
+        </div>
+        <div class="card-body" *ngSwitchCase="'Css Content'">
+            <strong>Css Content</strong> 
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates a, voluptatum in doloremque voluptate non quo, voluptas quam dolor quibusdam corrupti libero animi neque! Eaque illo ratione fugit rerum odio.                 
+        </div>
+        <div class="card-body" *ngSwitchCase="'Js Content'">
+            <strong>Js Content</strong> 
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates a, voluptatum in doloremque voluptate non quo, voluptas quam dolor quibusdam corrupti libero animi neque! Eaque illo ratione fugit rerum odio.                 
+        </div>
+    </div>
+</div> -->
+
+
+<!-- template driven form start -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="card alert alert-info">
+            <div class="card-body">
+                <form #signup="ngForm" (ngSubmit)="onsubmit()">
+                    <div class="form-group">
+                        <label for="username">username*</label>
+                        <input type="text" 
+                        ngModel 
+                        required
+                        #username="ngModel"
+                        pattern="[a-zA-Z]+"
+                        minlength="5"
+                        maxlength="8"
+                        name="username" 
+                        id="username" 
+                        class="form-control">
+                        <span *ngIf="username.touched && username.hasError('required')">
+                            username is required
+                        </span>
+                        <span *ngIf="username.dirty && username.hasError('pattern')">
+                            username should not be include special character and numbers
+                        </span>
+                        <span *ngIf="username.dirty && username.hasError('minlength')">
+                            minimun length username should be {{username.errors?.['minlength'].requiredLength}}
+                             and actual length is {{username.errors?.['minlength'].actualLength}}
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email*</label>
+                        <input type="text" 
+                        ngModel 
+                        required
+                        #email="ngModel"
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        name="email" 
+                        id="email" 
+                        class="form-control">
+                        <span *ngIf="email.touched && email.hasError('required')">
+                            Email is required
+                        </span>
+                        <span *ngIf="email.dirty && email.hasError('pattern')"> 
+                            Invalide email and password
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">contact</label>
+                        <input type="text" ngModel name="contact" id="contact" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="sectreatquestion">Sectreat Question</label>
+                        <select name="sectreatquestion" ngModel id="sectreatquestion" name="sectreatquestion" id="sectreatquestion" class="form-control">
+                            <option value="favouritecity">Favourate City</option>
+                            <option value="favouiritefood">Favourate Food</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="answer">Answer</label>
+                        <input type="text" ngModel class="form-control" id="answer" name="answer">
+                    </div>
+                    <div class="form-group">
+                        <label for="subscribed"> Is Subscribed
+                            <input type="checkbox" ngModel value="subscribed" name="subscribed" id="subscribed">
+                        </label>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="modeemail">Email
+                            <input type="radio" ngModel value="modeemail" name="modeemail" id="modeemail">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="modecontact"> Contact
+                        <input type="radio" ngModel id="modecontact" name="modeemail" value="mocontact">
+                        </label>
+                    </div> -->
+                    <div class="form-group" *ngFor="let mode of contactModeArr">
+                        <label [for]="mode.moc">
+                            <input type="radio" [value]="mode.moc" [id]="mode.moc" name="modeContact">
+                            {{mode.moc}}
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm mb-2">Sign Up</button>
+                </form>
+                 <button class="btn btn-info btn-block btn-sm" (click)="onEdit()">Edit</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

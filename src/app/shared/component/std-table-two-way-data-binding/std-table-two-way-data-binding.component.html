@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-4">
+           <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" [(ngModel)]="Fname" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" [(ngModel)]="Lname" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" [(ngModel)]="Email" class="form-control">
+             </div>
+             <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" [(ngModel)]="Contact" class="form-control">
+             </div>
+             <button class="btn btn-block btn-sm btn-primary" (click)="onstdAdd()">Add student</button>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered mt-4" *ngIf="stdArr.length>0; else noStdAdd">
+                <thead>
+                    <tr>
+                        <th>sr.no</th>
+                        <th>fname</th>
+                        <th>lname</th>
+                        <th>email</th>
+                        <th>contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of stdArr; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{std.fname}}</td>
+                        <td>{{std.lname}}</td>
+                        <td>{{std.email}}</td>
+                        <td>{{std.contact}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #noStdAdd>
+                <p class="alert alert-danger">
+                    No student info added yet
+                </p>
+            </ng-template>
+           
+        </div>
+    </div>
+</div>

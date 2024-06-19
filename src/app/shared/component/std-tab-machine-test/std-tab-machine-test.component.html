@@ -1,0 +1,100 @@
+<h3 class="alert alert-info text-center mt-4">ngIf Tab task</h3>
+
+<div class="nav nav-pills mb-4 mt-4">
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        (click)="ontabclick('Angular')"
+        [ngClass]="{
+            active:selectedFramework==='Angular'
+        }">Angular</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        (click)="ontabclick('Node')"
+        [ngClass]="{
+            active:selectedFramework==='Node'
+        }">Node</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        (click)="ontabclick('Js')"
+
+        [ngClass]="{
+            active:selectedFramework==='Js'
+        }">Js</a>
+    </li>
+</div>
+<div class="tab-body">
+    <div class="card">
+        <div class="card-body bg-dark text-white" *ngIf="selectedFramework==='Angular'">
+            <strong>Angular</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur praesentium quam ipsam, perspiciatis dolorem libero temporibus officiis, dolores deleniti ad error nobis cumque eius ullam! Adipisci ipsam odio inventore labore?
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body bg-dark text-white" *ngIf="selectedFramework==='Node'">
+            <strong>Node</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur praesentium quam ipsam, perspiciatis dolorem libero temporibus officiis, dolores deleniti ad error nobis cumque eius ullam! Adipisci ipsam odio inventore labore?
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body bg-dark text-white" *ngIf="selectedFramework==='Js'">
+            <strong>Js</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur praesentium quam ipsam, perspiciatis dolorem libero temporibus officiis, dolores deleniti ad error nobis cumque eius ullam! Adipisci ipsam odio inventore labore?
+        </div>
+    </div>
+    
+
+
+</div>
+
+<br>
+<div class="continer">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" #fname class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" #lname class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" #email class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="text" #contact class="form-control">
+                </div>
+                <button class="btn btn-sm btn-block btn-primary" (click)="onStdAdd()">Add Student</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                   <tr>
+                       <th>sr.no</th>
+                       <th>fname</th>
+                       <th>lname</th>
+                       <th>email</th>
+                       <th>contact</th>
+                   </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of studentArr; index as i">
+                      <td>{{i+1}}</td>
+                      <td>{{std.fname}}</td>
+                      <td>{{std.lname}}</td>
+                      <td>{{std.email}}</td>
+                      <td>{{std.contact}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

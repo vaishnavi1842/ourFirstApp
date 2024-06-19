@@ -1,0 +1,54 @@
+
+<h3 class="bg-dark text-white p-2 text-center">tab ts using ngSwitch</h3>
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:;"
+        (click)="onTabClick('java')"
+        [class.active]="selectedFramework==='java'">java</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:;"
+        (click)="onTabClick('python')"
+        [class.active]="selectedFramework==='python'">python</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:;"
+        (click)="onTabClick('php')"
+        [class.active]="selectedFramework==='php'">php</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="javascript:;"
+        (click)="onTabClick('c')"
+        [class.active]="selectedFramework==='c'">c</a>
+    </li>
+</ul>
+<hr>
+<ng-container  [ngSwitch]="selectedFramework.toLowerCase().trim()">
+    <div class="tab-body">
+        <div class="card">
+            <div class="card-body" *ngSwitchCase ="'java'">
+                <strong>java</strong>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis suscipit, doloremque natus molestiae itaque ullam necessitatibus repellendus beatae deleniti, doloribus quisquam, quae magnam pariatur laboriosam earum expedita tempora. Reiciendis, quaerat.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" *ngSwitchCase ="'python'">
+                <strong>python</strong>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis suscipit, doloremque natus molestiae itaque ullam necessitatibus repellendus beatae deleniti, doloribus quisquam, quae magnam pariatur laboriosam earum expedita tempora. Reiciendis, quaerat.
+            </div>
+        </div>
+        <div class="card" *ngSwitchCase ="'php'">
+            <div class="card-body">
+                <strong>php</strong>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis suscipit, doloremque natus molestiae itaque ullam necessitatibus repellendus beatae deleniti, doloribus quisquam, quae magnam pariatur laboriosam earum expedita tempora. Reiciendis, quaerat.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" *ngSwitchCase ="'c'">
+                <strong>c</strong>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis suscipit, doloremque natus molestiae itaque ullam necessitatibus repellendus beatae deleniti, doloribus quisquam, quae magnam pariatur laboriosam earum expedita tempora. Reiciendis, quaerat.
+            </div>
+        </div>
+    </div>
+</ng-container>
